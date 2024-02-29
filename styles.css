@@ -8,9 +8,9 @@ body {
     display: grid;
     grid-template-areas:
       'left header header header right'
-      'left main main main right'
-      'left main main main right'
-      'left main main main right'
+      'left main-top main-top main-top right'
+      'left main-body main-body main-body right'
+      'left main-footer main-footer main-footer right'
       'left main main main right';
     gap: 10px;
     background-color: violet;
@@ -55,10 +55,18 @@ body {
 }
 
 .item3 {
-    grid-area: main;
+    grid-area: main-top;
 }
 
 .item4 {
     grid-area: right;
     background-color: red;
+}
+
+.item5 {
+    grid-area: main-body;
+}
+
+.item6 {
+    grid-area: main-footer;
 }
