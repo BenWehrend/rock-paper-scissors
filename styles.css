@@ -1,0 +1,64 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'left header header header right'
+      'left main main main right'
+      'left main main main right'
+      'left main main main right'
+      'left main main main right';
+    gap: 10px;
+    background-color: violet;
+    border: 5px;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: center;
+    height: 100%;
+}
+
+.item1 {
+    grid-area: header;
+    background-color:green;
+}
+
+.item1-overlap {
+    grid-area: header;
+    margin-top: 50px;
+
+    color: white;
+    font-size: 75px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.item1-overlap2 {
+    grid-area: header;
+    margin-top: 150px;
+
+    color: white;
+    font-size: 30px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.item2 {
+    grid-area: left;
+    background-color: yellow;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: right;
+    background-color: red;
+}
