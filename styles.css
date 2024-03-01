@@ -9,13 +9,13 @@ body {
     grid-template-areas:
       'left header header header right'
       'left main-top main-top main-top right'
-      'left main-body main-body main-body right'
-      'left main-footer main-footer main-footer right'
+      'left . main-body . right'
+      'left . main-footer . right'
       'left main main main right';
     gap: 10px;
     background-color: violet;
     border: 5px;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-rows: 18% 18% 23% 23% 18%;
     grid-template-columns: 20% 20% 20% 20% 20%;
     text-align: center;
     height: 100%;
@@ -51,22 +51,58 @@ body {
 
 .item2 {
     grid-area: left;
-    background-color: yellow;
+    background-color: blueviolet;
+    font-size: 50px;
+}
+
+.item2-sub {
+    font-size: 35px;
+    color: white;
 }
 
 .item3 {
     grid-area: main-top;
 }
 
+.item3-sub {
+    font-size: 35px;
+    color: white;
+}
+
 .item4 {
     grid-area: right;
     background-color: red;
+    font-size: 50px;
 }
 
 .item5 {
     grid-area: main-body;
+    background-color: purple;
+    color: white;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.item5 ul {
+    display: flex;
+    text-align: justify;
+    justify-self: center;
+    font-size: 18px;
 }
 
 .item6 {
     grid-area: main-footer;
+    background-color: teal;
+    color: white;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    align-items: center;
+}
+
+.item6 ul {
+    display: flex;
+    text-align: justify;
+    justify-self: center;
 }
