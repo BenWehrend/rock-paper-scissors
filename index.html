@@ -8,27 +8,42 @@
     <div class="grid-container">
         <h1 class="title" style="visibility: visible;">Rock, Paper, Scissors</h1>
         <h2 class="subtitle" style="visibility: visible;">Choose your game!</h2>
-      <div class="human">👨🏼‍🦳
+      <div class="human">
+        <p>👨🏼‍🦳</p>
         <p class="human-name">Human</p>
-        <p class="human-win-count">Wins: 0</p>
+        <p class="human-wins">Wins: 0</p>
       </div>
-      <div class="main"></div>
-      <div class="computer">💻
+      <div class="computer">
+        <p>💻</p>
         <p class="computer-name">Computer</p>
-        <p class="item3-sub">Wins: 0</p>
+        <p class="computer-wins">Wins: 0</p>
       </div>
-      <div class="classic-game" style="visibility: visible;">✂️CLASSIC📄
-        <ul>rock > scissors</ul>
-        <ul>paper > rock</ul>
-        <ul>scissors > paper</ul>
-      </div>
-      <div class="challenge-game" style="visibility: visible;">👽CHALLENGE🦎
-        <ul>rock > alien & lizard</ul>
-        <ul>paper > rock & ufo</ul>
-        <ul>alien > paper & lizard</ul>
-        <ul>lizard > paper & ufo</ul>
-        <ul>ufo > alien & rock</ul>
+      <button class="classic-game" style="visibility: hidden;">
+        ✂️ CLASSIC 📄
+        <div>
+          <ul>rock > scissors</ul>
+          <ul>paper > rock</ul>
+          <ul>scissors > paper</ul>
+        </div>
+      </button>
+      <button class="rock">🪨</button>
+      <button class="paper">📄</button>
+      <button class="scissors">✂️</button>
+      <button class="challenge-game" style="visibility: hidden;">
+        🦎 CHALLENGE 👽
+        <div>
+          <ul>rock > scissors & lizard</ul>
+          <ul>paper > rock & alien</ul>
+          <ul>scissors > paper & lizard</ul>
+          <ul>lizard > paper & alien</ul>
+          <ul>alien > scissors & rock</ul>
+        </div>
+      </button>
+      <button class="lizard">🦎</button>
+      <button class="change-game">Change game?</button>
+      <button class="alien">👽</button>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
