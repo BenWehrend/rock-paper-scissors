@@ -16,12 +16,12 @@ body {
     display: grid;
     grid-template-areas:
       'left header header header right'
-      'left main-top main-top main-top right'
+      'left main-top-left main-top main-top-right right'
       'left main-body-left main-body main-body-right right'
       'left main-footer-left main-footer main-footer-right right'
       'left main main main right';
     gap: 10px;
-    background-color: violet;
+    background-color: var(--background-color);
     border: 5px;
     text-align: center;
     min-height: 100vh;
@@ -59,6 +59,7 @@ body {
 .computer-wins {
     font-size: 2.5vw;
     color: var(--main-color);
+    font-family: var(--font-family);
 }
 
 .computer {
@@ -68,7 +69,7 @@ body {
 }
 
 .classic-game {
-    grid-area: main-body;
+    grid-area: main-top;
 }
 
 .classic-game,
@@ -78,7 +79,7 @@ body {
     align-items: center;
     flex-direction: column;
 
-    background-color: var(--background-color);
+    background-color: purple;
     color: var(--main-color);
     font-family: var(--font-family);
     font-weight: 400;
@@ -107,8 +108,8 @@ body {
 }
 
 .challenge-game {
-    grid-area: main-footer;
-    background-color: var(--background-color);
+    grid-area: main-body;
+    background-color: purple;
     color: var(--main-color);
     font-family: var(--font-family);
     font-weight: 400;
@@ -140,12 +141,17 @@ body {
     background-color: var(--background-color);
 }
 
+.paper {
+    grid-area: main-top;
+}
+
 .change-game {
     grid-area: main-body;
     display: inline-flex;
-    background-color: var(--background-color);
+    background-color: purple;
     justify-content: center;
     align-items: center;
     font-size: 2vw;
     color: var(--main-color);
+    font-family: var(--font-family);
 }

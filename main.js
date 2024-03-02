@@ -1,8 +1,14 @@
 var human = document.querySelector('.human');
 var computer = document.querySelector('.computer');
-var classicGame = document.querySelector('.classic-game');
-var challengeGame = document.querySelector('.challenge-game');
-
+var classicGameButton = document.querySelector('.classic-game');
+var challengeGameButton = document.querySelector('.challenge-game');
+var rockButton = document.querySelector('.rock');
+var paperButton = document.querySelector('.paper');
+var scissorsButton = document.querySelector('.scissors');
+var lizardButton = document.querySelector('.lizard');
+var alienButton = document.querySelector('.alien');
+var changeGameButton = document.querySelector('.change-game');
+var subtitle = document.querySelector('.subtitle');
 
 function createPlayer(name, token, wins) {
 
@@ -16,10 +22,44 @@ function createGame(player1, player2) {
 
 }
 
-function startGame() {
-    classicGame.style.visibility = "hidden";
-    challengeGame.style.visibility = "hidden";
+function startClassicGame() {
+    classicGameButton.style.visibility = "hidden";
+    challengeGameButton.style.visibility = "hidden";
+    rockButton.style.visibility = "visible";
+    paperButton.style.visibility = "visible";
+    scissorsButton.style.visibility = "visible";
+    changeGameButton.style.visibility = "visible";
+    subtitle.innerHTML = "Choose your fighter!";
 }
 
-classicGame.addEventListener('click', startGame);
-challengeGame.addEventListener('click', startGame);
+function startChallengeGame() {
+    classicGameButton.style.visibility = "hidden";
+    challengeGameButton.style.visibility = "hidden";
+    rockButton.style.visibility = "visible";
+    paperButton.style.visibility = "visible";
+    scissorsButton.style.visibility = "visible";
+    lizardButton.style.visibility = "visible";
+    alienButton.style.visibility = "visible";
+    changeGameButton.style.visibility = "visible";
+    subtitle.innerHTML = "Choose your fighter!";
+}
+
+function changeGame() {
+    classicGameButton.style.visibility = "visible";
+    challengeGameButton.style.visibility = "visible";    
+    rockButton.style.visibility = "hidden";
+    paperButton.style.visibility = "hidden";
+    scissorsButton.style.visibility = "hidden";
+    lizardButton.style.visibility = "hidden";
+    alienButton.style.visibility = "hidden";
+    changeGameButton.style.visibility = "hidden";
+    subtitle.innetHTML = "Choose your game!";
+}
+
+
+
+classicGameButton.addEventListener('click', startClassicGame);
+
+challengeGameButton.addEventListener('click', startChallengeGame);
+
+changeGameButton.addEventListener('click', changeGame);
