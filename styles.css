@@ -16,10 +16,10 @@ body {
     display: grid;
     grid-template-areas:
       'left header right'
-      'left main-top right'
-      'left main-body right'
-      'left main-footer right'
+      'left body right'
+      'left bottom-body right'
       'left footer right';
+      /* 'left footer right'; */
     gap: 10px;
     background-color: var(--background-color);
     border: 5px;
@@ -47,7 +47,7 @@ body {
     padding: 2px;
 }
 
-.human{
+.human {
     grid-area: left;
     background-color: rgb(201, 79, 201);
     font-size: 2.5vw;
@@ -69,7 +69,8 @@ body {
 }
 
 .classic-game {
-    grid-area: main-top;
+    grid-area: bottom-body;
+    padding: 5px;
 }
 
 .classic-game,
@@ -86,7 +87,6 @@ body {
     font-weight: 400;
     font-size: 1.5vw;
     width: 33%;
-    /* border: 0; */
 }
 
 .classic-game ul {
@@ -99,18 +99,16 @@ body {
     overflow-y: auto;
 }
 
-.classic-game ul li,
-.challenge-game ul li {
-    flex: 0 0 auto;
-    margin: 0;
-    max-width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.challenge-game ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0;
 }
 
 .challenge-game {
-    grid-area: main-body;
+    grid-area: footer;
     background-color: purple;
     color: var(--main-color);
     font-family: var(--font-family);
@@ -124,14 +122,6 @@ body {
     min-height: 30vh;
 }
 
-.challenge-game ul {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: 0;
-}
-
 .rock,
 .paper,
 .scissors,
@@ -141,7 +131,6 @@ body {
     justify-content: center;
     font-size: 10vw;
     background-color: var(--background-color);
-    /* border: 0; */
 }
 
 .rock:hover,
@@ -155,9 +144,9 @@ body {
     cursor: pointer;
 }
 
-.paper {
+/* .paper {
     grid-area: main-top;
-}
+} */
 
 .change-game {
     grid-area: left;
@@ -170,6 +159,11 @@ body {
     font-family: var(--font-family);
 }
 
-.buttons-classic {
-    grid-area: main-body;
+.buttons-all {
+    grid-area: body;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* min-width: 0;
+    min-height: 0; */
 }

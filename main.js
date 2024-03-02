@@ -26,6 +26,8 @@ function createGame(player1, player2) {
 
 }
 
+classicGameButton.addEventListener('click', startClassicGame);
+
 function startClassicGame() {
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
@@ -36,7 +38,7 @@ function startClassicGame() {
     subtitle.innerHTML = "Choose your fighter!";
 }
 
-classicGameButton.addEventListener('click', startClassicGame);
+challengeGameButton.addEventListener('click', startChallengeGame);
 
 function startChallengeGame() {
     classicGameButton.style.visibility = "hidden";
@@ -50,7 +52,7 @@ function startChallengeGame() {
     subtitle.innerHTML = "Choose your fighter!";
 }
 
-challengeGameButton.addEventListener('click', startChallengeGame);
+changeGameButton.addEventListener('click', changeGame);
 
 function changeGame() {
     classicGameButton.style.visibility = "visible";
@@ -63,7 +65,3 @@ function changeGame() {
     changeGameButton.style.visibility = "hidden";
     subtitle.innerHTML = "Choose your game!";
 }
-
-changeGameButton.addEventListener('click', changeGame);
-
-
