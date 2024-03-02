@@ -1,8 +1,15 @@
+:root {
+    --font-family: "Fjalla One", sans-serif;
+    --main-color: white;
+}
+
 html,
 body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
+    overflow: auto;
 }
+
 
 .grid-container {
     display: grid;
@@ -15,94 +22,109 @@ body {
     gap: 10px;
     background-color: violet;
     border: 5px;
-    grid-template-rows: 18% 18% 23% 23% 18%;
-    grid-template-columns: 20% 20% 20% 20% 20%;
     text-align: center;
-    height: 100%;
+    min-height: 100vh;
 }
 
-.item1 {
+.title,
+.subtitle {
     grid-area: header;
-    background-color:green;
-}
-
-.item1-overlap {
-    grid-area: header;
-    margin-top: 50px;
-
-    color: white;
-    font-size: 75px;
-    font-family: "Fjalla One", sans-serif;
+    color: var(--main-color);
+    font-family: var(--font-family);
     font-weight: 400;
     font-style: normal;
 }
 
-.item1-overlap2 {
-    grid-area: header;
-    margin-top: 150px;
-
-    color: white;
-    font-size: 30px;
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
+.title {
+    margin-top: 5vh;
+    font-size: 5vw;
 }
 
-.item2 {
+.subtitle {
+    margin-top: 17vh;
+    font-size: 2vw;
+    padding: 2px;
+}
+
+.human{
     grid-area: left;
     background-color: blueviolet;
-    font-size: 50px;
+    font-size: 2.5vw;
 }
 
-.item2-sub {
-    font-size: 35px;
-    color: white;
+.human-name,
+.computer-name {
+    font-size: 2.5vw;
+    color: var(--main-color);
 }
 
-.item3 {
+.main {
     grid-area: main-top;
 }
 
-.item3-sub {
-    font-size: 35px;
-    color: white;
-}
-
-.item4 {
+.computer {
     grid-area: right;
     background-color: red;
-    font-size: 50px;
+    font-size: 2.5vw;
 }
 
-.item5 {
+.classic-game {
     grid-area: main-body;
-    background-color: purple;
-    color: white;
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
 }
 
-.item5 ul {
+.classic-game,
+.challenge-game {
     display: flex;
-    text-align: justify;
-    justify-self: center;
-    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: purple;
+    color: var(--main-color);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1.5vw;
 }
 
-.item6 {
+.classic-game ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.classic-game ul li,
+.challenge-game ul li {
+    flex: 0 0 auto;
+    margin: 0;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.challenge-game {
     grid-area: main-footer;
     background-color: teal;
-    color: white;
-    font-family: "Fjalla One", sans-serif;
+    color: var(--main-color);
+    font-family: var(--font-family);
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    max-height: 80%;
+    min-height: 38vh;
 }
 
-.item6 ul {
+.challenge-game ul {
     display: flex;
-    text-align: justify;
-    justify-self: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0;
 }
