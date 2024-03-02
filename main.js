@@ -53,7 +53,7 @@ function changeGame() {
     lizardButton.style.visibility = "hidden";
     alienButton.style.visibility = "hidden";
     changeGameButton.style.visibility = "hidden";
-    subtitle.innetHTML = "Choose your game!";
+    subtitle.innerHTML = "Choose your game!";
 }
 
 
