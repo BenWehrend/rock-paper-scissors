@@ -10,8 +10,12 @@ var alienButton = document.querySelector('.alien');
 var changeGameButton = document.querySelector('.change-game');
 var subtitle = document.querySelector('.subtitle');
 
-function createPlayer(name, token, wins) {
-
+function createPlayer(name, token, wins = 0) {
+    return {
+        name,
+        token,
+        wins
+    }
 }
 
 function takeTurn(player1, player2) {
@@ -32,6 +36,8 @@ function startClassicGame() {
     subtitle.innerHTML = "Choose your fighter!";
 }
 
+classicGameButton.addEventListener('click', startClassicGame);
+
 function startChallengeGame() {
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
@@ -43,6 +49,8 @@ function startChallengeGame() {
     changeGameButton.style.visibility = "visible";
     subtitle.innerHTML = "Choose your fighter!";
 }
+
+challengeGameButton.addEventListener('click', startChallengeGame);
 
 function changeGame() {
     classicGameButton.style.visibility = "visible";
@@ -56,10 +64,6 @@ function changeGame() {
     subtitle.innerHTML = "Choose your game!";
 }
 
-
-
-classicGameButton.addEventListener('click', startClassicGame);
-
-challengeGameButton.addEventListener('click', startChallengeGame);
-
 changeGameButton.addEventListener('click', changeGame);
+
+

@@ -15,11 +15,11 @@ body {
 .grid-container {
     display: grid;
     grid-template-areas:
-      'left header header header right'
-      'left main-top-left main-top main-top-right right'
-      'left main-body-left main-body main-body-right right'
-      'left main-footer-left main-footer main-footer-right right'
-      'left main main main right';
+      'left header right'
+      'left main-top right'
+      'left main-body right'
+      'left main-footer right'
+      'left footer right';
     gap: 10px;
     background-color: var(--background-color);
     border: 5px;
@@ -78,12 +78,14 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    justify-self: center;
 
     background-color: purple;
     color: var(--main-color);
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 1.5vw;
+    width: 33%;
     /* border: 0; */
 }
 
@@ -139,6 +141,18 @@ body {
     justify-content: center;
     font-size: 10vw;
     background-color: var(--background-color);
+    /* border: 0; */
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover,
+.lizard:hover,
+.alien:hover,
+.classic-game:hover,
+.challenge-game:hover,
+.change-game:hover {
+    cursor: pointer;
 }
 
 .paper {
@@ -146,7 +160,7 @@ body {
 }
 
 .change-game {
-    grid-area: main-body;
+    grid-area: left;
     display: inline-flex;
     background-color: purple;
     justify-content: center;
@@ -154,4 +168,8 @@ body {
     font-size: 2vw;
     color: var(--main-color);
     font-family: var(--font-family);
+}
+
+.buttons-classic {
+    grid-area: main-body;
 }
