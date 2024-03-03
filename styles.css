@@ -50,7 +50,7 @@ body {
 .player {
     grid-area: left;
     background-color: rgb(201, 79, 201);
-    font-size: 2.5vw;
+    font-size: 3.5vw;
 }
 
 .player-name,
@@ -87,6 +87,7 @@ body {
     font-weight: 400;
     font-size: 1.5vw;
     width: 33%;
+    /* border: 0; */
 }
 
 .classic-game ul {
@@ -131,6 +132,7 @@ body {
     justify-content: center;
     font-size: 10vw;
     background-color: var(--background-color);
+    /* border: 0; */
 }
 
 .rock:hover,
@@ -158,6 +160,7 @@ body {
     color: var(--main-color);
     font-family: var(--font-family);
     padding: 15px;
+    /* border: 0; */
 }
 
 .buttons-all {

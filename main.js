@@ -1,5 +1,3 @@
-var player = document.querySelector('.player');
-var computer = document.querySelector('.computer');
 var classicGameButton = document.querySelector('.classic-game');
 var challengeGameButton = document.querySelector('.challenge-game');
 var rockButton = document.querySelector('.rock');
@@ -9,15 +7,22 @@ var lizardButton = document.querySelector('.lizard');
 var alienButton = document.querySelector('.alien');
 var changeGameButton = document.querySelector('.change-game');
 var subtitle = document.querySelector('.subtitle');
+var playersWinCount = document.querySelector('.player-wins');
+var computerWinCount = document.querySelector('.computer-wins');
+
+var player = createPlayer('Player', '👨🏼‍🦳');
+var computer = createPlayer('Computer', '💻');
+var playerWins = 0;
+var computerWins = 0;
+var currentGame;
 
 var classicArray = ['rock', 'paper', 'scissors'];
 var challengeArray = ['rock', 'paper', 'scissors', 'lizard', 'alien'];
 
-function createPlayer(name, token, wins) {
+function createPlayer(name, token) {
     return {
         name,
-        token,
-        wins
+        token
     }
 }
 
@@ -50,6 +55,7 @@ challengeGameButton.addEventListener('click', startChallengeGame);
 changeGameButton.addEventListener('click', changeGame);
 
 function startClassicGame() {
+    currentGame = 'classic';
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
     rockButton.style.visibility = "visible";
@@ -61,6 +67,7 @@ function startClassicGame() {
 }
 
 function startChallengeGame() {
+    currentGame = 'challenge';
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
     rockButton.style.visibility = "visible";
@@ -91,11 +98,19 @@ function changeGame() {
 function playClassicGame(playerChoice) {
     var computerChoice = classicArray[Math.floor(Math.random() * classicArray.length)];
     compareChoices(playerChoice, computerChoice);
+    rockButton.textContent = playerChoice;
+    scissorsButton.textContent = computerChoice;
+    paperButton.style.visibility = "hidden";
 }
 
 function playChallengeGame(playerChoice) {
     var computerChoice = challengeArray[Math.floor(Math.random() * challengeArray.length)];
     compareChallengeChoices(playerChoice, computerChoice);
+    rockButton.textContent = playerChoice;
+    scissorsButton.textContent = computerChoice;
+    lizardButton.style.visibility = "hidden";
+    paperButton.style.visibility = "hidden";
+    alienButton.style.visibility = "hidden";
 }
 
 function compareChoices(playerChoice, computerChoice) {
@@ -104,10 +119,19 @@ function compareChoices(playerChoice, computerChoice) {
     } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
                (playerChoice === 'paper' && computerChoice === 'rock') ||
                (playerChoice === 'scissors' && computerChoice === 'paper')) {
-        subtitle.innerHTML = "Congrats! You win!";
+        subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";;
+        playerWins++;
     } else {
-        subtitle.innerHTML = "Oh no! You lose!";
+        subtitle.innerHTML = "💻 Oh no! You lose! 💻";
+        computerWins++;
     }
+    updateWinCount();
+    setTimeout(function() {
+        subtitle.innerHTML = "Choose your fighter!";
+        rockButton.textContent = "🪨";
+        scissorsButton.textContent = "✂️";
+        paperButton.style.visibility = "visible";
+    }, 1500);
 }
 
 function compareChallengeChoices(playerChoice, computerChoice) {
@@ -125,22 +149,45 @@ function compareChallengeChoices(playerChoice, computerChoice) {
         (playerChoice === 'paper' && computerChoice === 'alien') ||
         (playerChoice === 'alien' && computerChoice === 'rock')
     ) {
-        subtitle.innerHTML = "Congrats! You win!";
+        subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";
+        playerWins++;
     } else {
-        subtitle.innerHTML = "Oh no! You lose!";
+        subtitle.innerHTML = "💻 Oh no! You lose! 💻";
+        computerWins++;
     }
+    updateWinCount();
+    setTimeout(function() {
+        subtitle.innerHTML = "Choose your fighter!";
+        rockButton.textContent = "🪨";
+        scissorsButton.textContent = "✂️";
+        paperButton.style.visibility = "visible";
+        lizardButton.style.visibility = "visible";
+        alienButton.style.visibility = "visible";
+    }, 1500);
 }
 
 function rockChoice() {
-    playClassicGame('rock');
+    if (currentGame === 'classic') {
+        playClassicGame('rock');
+    } else {
+        playChallengeGame('rock');
+    }
 }
 
 function paperChoice() {
-    playClassicGame('paper');
+    if (currentGame === 'classic') {
+        playClassicGame('paper');
+    } else {
+        playChallengeGame('paper');
+    }
 }
 
 function scissorsChoice() {
-    playClassicGame('scissors');
+    if (currentGame === 'classic') {
+        playClassicGame('scissors');
+    } else { 
+        playChallengeGame('scissors');
+    }
 }
 
 function lizardChoice() {
@@ -149,4 +196,9 @@ function lizardChoice() {
 
 function alienChoice() {
     playChallengeGame('alien');
+}
+
+function updateWinCount() {
+    playersWinCount.textContent = `Wins: ${playerWins}`;
+    computerWinCount.textContent = `Wins: ${computerWins}`;
 }
