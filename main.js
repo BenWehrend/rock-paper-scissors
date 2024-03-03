@@ -8,7 +8,6 @@ var scissorsButton = document.querySelector('.scissors');
 var lizardButton = document.querySelector('.lizard');
 var alienButton = document.querySelector('.alien');
 var changeGameButton = document.querySelector('.change-game');
-var title = document.querySelector('.title');
 var subtitle = document.querySelector('.subtitle');
 
 var classicArray = ['rock', 'paper', 'scissors'];
@@ -70,7 +69,6 @@ function startChallengeGame() {
     lizardButton.style.visibility = "visible";
     alienButton.style.visibility = "visible";
     changeGameButton.style.visibility = "visible";
-    title.innerHTML = "Rock, Paper, Scissors, Lizard, Alien"
     subtitle.innerHTML = "Choose your fighter!";
     addClassicEvents();
     addChallengeEvents();
@@ -85,7 +83,6 @@ function changeGame() {
     lizardButton.style.visibility = "hidden";
     alienButton.style.visibility = "hidden";
     changeGameButton.style.visibility = "hidden";
-    title.innerHTML = "Rock, Paper, Scissors";
     subtitle.innerHTML = "Choose your game!";
     removeClassicEvents();
     removeChallengeEvents();
