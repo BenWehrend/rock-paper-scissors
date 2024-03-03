@@ -204,7 +204,3 @@ function updateWinCount() {
     playersWinCount.textContent = `Wins: ${playerWins}`;
     computerWinCount.textContent = `Wins: ${computerWins}`;
 }
-
-function updateResults() {
-    
-}
