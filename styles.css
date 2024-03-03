@@ -47,15 +47,15 @@ body {
     padding: 2px;
 }
 
-.human {
+.player {
     grid-area: left;
     background-color: rgb(201, 79, 201);
     font-size: 2.5vw;
 }
 
-.human-name,
+.player-name,
 .computer-name,
-.human-wins,
+.player-wins,
 .computer-wins {
     font-size: 2.5vw;
     color: var(--main-color);
