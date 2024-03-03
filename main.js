@@ -9,6 +9,8 @@ var changeGameButton = document.querySelector('.change-game');
 var subtitle = document.querySelector('.subtitle');
 var playersWinCount = document.querySelector('.player-wins');
 var computerWinCount = document.querySelector('.computer-wins');
+var playerResult = document.querySelector('.player-choice');
+var computerResult = document.querySelector('.computer-choice');
 
 var player = createPlayer('Player', '👨🏼‍🦳');
 var computer = createPlayer('Computer', '💻');
@@ -16,8 +18,8 @@ var playerWins = 0;
 var computerWins = 0;
 var currentGame;
 
-var classicArray = ['rock', 'paper', 'scissors'];
-var challengeArray = ['rock', 'paper', 'scissors', 'lizard', 'alien'];
+var classicArray = ['🪨', '📄', '✂️'];
+var challengeArray = ['🪨', '📄', '✂️', '🦎', '👽'];
 
 function createPlayer(name, token) {
     return {
@@ -116,9 +118,9 @@ function playChallengeGame(playerChoice) {
 function compareChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         subtitle.innerHTML = "It's a tie!";
-    } else if ((playerChoice === 'rock' && computerChoice === 'scissors') ||
-               (playerChoice === 'paper' && computerChoice === 'rock') ||
-               (playerChoice === 'scissors' && computerChoice === 'paper')) {
+    } else if ((playerChoice === '🪨' && computerChoice === '✂️') ||
+               (playerChoice === '📄' && computerChoice === '🪨') ||
+               (playerChoice === '✂️' && computerChoice === '📄')) {
         subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";;
         playerWins++;
     } else {
@@ -138,16 +140,16 @@ function compareChallengeChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         subtitle.innerHTML = "It's a tie!";
     } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper') ||
-        (playerChoice === 'rock' && computerChoice === 'lizard') ||
-        (playerChoice === 'lizard' && computerChoice === 'alien') ||
-        (playerChoice === 'alien' && computerChoice === 'scissors') ||
-        (playerChoice === 'scissors' && computerChoice === 'lizard') ||
-        (playerChoice === 'lizard' && computerChoice === 'paper') ||
-        (playerChoice === 'paper' && computerChoice === 'alien') ||
-        (playerChoice === 'alien' && computerChoice === 'rock')
+        (playerChoice === '🪨' && computerChoice === '✂️') ||
+        (playerChoice === '📄' && computerChoice === '🪨') ||
+        (playerChoice === '✂️' && computerChoice === '📄') ||
+        (playerChoice === '🪨' && computerChoice === '🦎') ||
+        (playerChoice === '🦎' && computerChoice === '👽') ||
+        (playerChoice === '👽' && computerChoice === '✂️') ||
+        (playerChoice === '✂️' && computerChoice === '🦎') ||
+        (playerChoice === '🦎' && computerChoice === '📄') ||
+        (playerChoice === '📄' && computerChoice === '👽') ||
+        (playerChoice === '👽' && computerChoice === '🪨')
     ) {
         subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";
         playerWins++;
@@ -168,37 +170,41 @@ function compareChallengeChoices(playerChoice, computerChoice) {
 
 function rockChoice() {
     if (currentGame === 'classic') {
-        playClassicGame('rock');
+        playClassicGame('🪨');
     } else {
-        playChallengeGame('rock');
+        playChallengeGame('🪨');
     }
 }
 
 function paperChoice() {
     if (currentGame === 'classic') {
-        playClassicGame('paper');
+        playClassicGame('📄');
     } else {
-        playChallengeGame('paper');
+        playChallengeGame('📄');
     }
 }
 
 function scissorsChoice() {
     if (currentGame === 'classic') {
-        playClassicGame('scissors');
+        playClassicGame('✂️');
     } else { 
-        playChallengeGame('scissors');
+        playChallengeGame('✂️');
     }
 }
 
 function lizardChoice() {
-    playChallengeGame('lizard');
+    playChallengeGame('🦎');
 }
 
 function alienChoice() {
-    playChallengeGame('alien');
+    playChallengeGame('👽');
 }
 
 function updateWinCount() {
     playersWinCount.textContent = `Wins: ${playerWins}`;
     computerWinCount.textContent = `Wins: ${computerWins}`;
+}
+
+function updateResults() {
+    
 }

@@ -19,7 +19,6 @@ body {
       'left body right'
       'left bottom-body right'
       'left footer right';
-      /* 'left footer right'; */
     gap: 10px;
     background-color: var(--background-color);
     border: 5px;
@@ -87,7 +86,7 @@ body {
     font-weight: 400;
     font-size: 1.5vw;
     width: 33%;
-    /* border: 0; */
+    border: 0;
 }
 
 .classic-game ul {
@@ -132,7 +131,7 @@ body {
     justify-content: center;
     font-size: 10vw;
     background-color: var(--background-color);
-    /* border: 0; */
+    border: 0;
 }
 
 .rock:hover,
@@ -146,10 +145,6 @@ body {
     cursor: pointer;
 }
 
-/* .paper {
-    grid-area: main-top;
-} */
-
 .change-game {
     grid-area: left;
     display: inline-flex;
@@ -160,7 +155,7 @@ body {
     color: var(--main-color);
     font-family: var(--font-family);
     padding: 15px;
-    /* border: 0; */
+    border: 0;
 }
 
 .buttons-all {
@@ -168,6 +163,4 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* min-width: 0;
-    min-height: 0; */
 }
