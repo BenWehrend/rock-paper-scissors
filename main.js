@@ -117,14 +117,14 @@ function playChallengeGame(playerChoice) {
 
 function compareChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        subtitle.innerHTML = "It's a tie!";
+        subtitle.innerHTML = "❔ It's a tie! ❔";
     } else if ((playerChoice === '🪨' && computerChoice === '✂️') ||
                (playerChoice === '📄' && computerChoice === '🪨') ||
                (playerChoice === '✂️' && computerChoice === '📄')) {
-        subtitle.innerHTML = "⛷️ Congrats! You win! ⛷️";;
+        subtitle.innerHTML = "🍻 Score one for the home team 🍻";;
         playerWins++;
     } else {
-        subtitle.innerHTML = "💻 Oh no! You lose! 💻";
+        subtitle.innerHTML = "❌ RNG says not this time ❌";
         computerWins++;
     }
     updateWinCount();
@@ -138,7 +138,7 @@ function compareChoices(playerChoice, computerChoice) {
 
 function compareChallengeChoices(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        subtitle.innerHTML = "It's a tie!";
+        subtitle.innerHTML = "❔ It's a tie! ❔";
     } else if (
         (playerChoice === '🪨' && computerChoice === '✂️') ||
         (playerChoice === '📄' && computerChoice === '🪨') ||
@@ -151,10 +151,10 @@ function compareChallengeChoices(playerChoice, computerChoice) {
         (playerChoice === '📄' && computerChoice === '👽') ||
         (playerChoice === '👽' && computerChoice === '🪨')
     ) {
-        subtitle.innerHTML = "⛷️ Congrats! You win! ⛷️";
+        subtitle.innerHTML = "🍻 Score one for the home team 🍻";
         playerWins++;
     } else {
-        subtitle.innerHTML = "💻 Oh no! You lose! 💻";
+        subtitle.innerHTML = "❌ RNG says not this time ❌";
         computerWins++;
     }
     updateWinCount();
