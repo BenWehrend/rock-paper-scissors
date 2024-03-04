@@ -11,7 +11,8 @@ I did use liveshare on VSCode select to run the page.
 - 'Go live' on liveshare
 
 ### Preview of App:
-![Screenshot 2024-03-04 at 11 38 48 AM](https://github.com/BenWehrend/rock-paper-scissors/assets/155917289/733348e4-b099-4b57-b3ca-532d7bb5e499)
+![Screenshot 2024-03-04 at 1 10 24 PM](https://github.com/BenWehrend/rock-paper-scissors/assets/155917289/e0d1cecd-4761-466b-ac01-0f7c84f3fe24)
+
 
 ### Context:
 This was my final solo project for module 1 at Turing. We were given an entire week to complete this task.
