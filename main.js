@@ -1,10 +1,10 @@
 var classicGameButton = document.querySelector('.classic-game');
 var challengeGameButton = document.querySelector('.challenge-game');
-var rockButton = document.querySelector('.rock');
-var paperButton = document.querySelector('.paper');
-var scissorsButton = document.querySelector('.scissors');
-var lizardButton = document.querySelector('.lizard');
-var alienButton = document.querySelector('.alien');
+var rock = document.querySelector('.rock');
+var paper = document.querySelector('.paper');
+var scissors = document.querySelector('.scissors');
+var lizard = document.querySelector('.lizard');
+var alien = document.querySelector('.alien');
 var changeGameButton = document.querySelector('.change-game');
 var subtitle = document.querySelector('.subtitle');
 var playersWinCount = document.querySelector('.player-wins');
@@ -29,27 +29,27 @@ function createPlayer(name, token) {
 }
 
 function addClassicEvents() {
-    rockButton.addEventListener('click', rockChoice);
-    paperButton.addEventListener('click', paperChoice);
-    scissorsButton.addEventListener('click', scissorsChoice);
+    rock.addEventListener('click', rockChoice);
+    paper.addEventListener('click', paperChoice);
+    scissors.addEventListener('click', scissorsChoice);
 }
 
 function removeClassicEvents() {
-    rockButton.removeEventListener('click', rockChoice);
-    paperButton.removeEventListener('click', paperChoice);
-    scissorsButton.removeEventListener('click', scissorsChoice);
+    rock.removeEventListener('click', rockChoice);
+    paper.removeEventListener('click', paperChoice);
+    scissors.removeEventListener('click', scissorsChoice);
 }
 
 function addChallengeEvents() {
     addClassicEvents();
-    lizardButton.addEventListener('click', lizardChoice);
-    alienButton.addEventListener('click', alienChoice);
+    lizard.addEventListener('click', lizardChoice);
+    alien.addEventListener('click', alienChoice);
 }
 
 function removeChallengeEvents() {
     removeClassicEvents();
-    lizardButton.removeEventListener('click', lizardChoice);
-    alienButton.removeEventListener('click', alienChoice);
+    lizard.removeEventListener('click', lizardChoice);
+    alien.removeEventListener('click', alienChoice);
 }
 
 classicGameButton.addEventListener('click', startClassicGame);
@@ -60,9 +60,9 @@ function startClassicGame() {
     currentGame = 'classic';
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
-    rockButton.style.visibility = "visible";
-    paperButton.style.visibility = "visible";
-    scissorsButton.style.visibility = "visible";
+    rock.style.visibility = "visible";
+    paper.style.visibility = "visible";
+    scissors.style.visibility = "visible";
     changeGameButton.style.visibility = "visible";
     subtitle.innerHTML = "Choose your fighter!";
     addClassicEvents();
@@ -72,11 +72,11 @@ function startChallengeGame() {
     currentGame = 'challenge';
     classicGameButton.style.visibility = "hidden";
     challengeGameButton.style.visibility = "hidden";
-    rockButton.style.visibility = "visible";
-    paperButton.style.visibility = "visible";
-    scissorsButton.style.visibility = "visible";
-    lizardButton.style.visibility = "visible";
-    alienButton.style.visibility = "visible";
+    rock.style.visibility = "visible";
+    paper.style.visibility = "visible";
+    scissors.style.visibility = "visible";
+    lizard.style.visibility = "visible";
+    alien.style.visibility = "visible";
     changeGameButton.style.visibility = "visible";
     subtitle.innerHTML = "Choose your fighter!";
     addClassicEvents();
@@ -86,11 +86,11 @@ function startChallengeGame() {
 function changeGame() {
     classicGameButton.style.visibility = "visible";
     challengeGameButton.style.visibility = "visible";    
-    rockButton.style.visibility = "hidden";
-    paperButton.style.visibility = "hidden";
-    scissorsButton.style.visibility = "hidden";
-    lizardButton.style.visibility = "hidden";
-    alienButton.style.visibility = "hidden";
+    rock.style.visibility = "hidden";
+    paper.style.visibility = "hidden";
+    scissors.style.visibility = "hidden";
+    lizard.style.visibility = "hidden";
+    alien.style.visibility = "hidden";
     changeGameButton.style.visibility = "hidden";
     subtitle.innerHTML = "Choose your game!";
     removeClassicEvents();
@@ -100,19 +100,19 @@ function changeGame() {
 function playClassicGame(playerChoice) {
     var computerChoice = classicArray[Math.floor(Math.random() * classicArray.length)];
     compareChoices(playerChoice, computerChoice);
-    rockButton.textContent = playerChoice;
-    scissorsButton.textContent = computerChoice;
-    paperButton.style.visibility = "hidden";
+    rock.textContent = playerChoice;
+    scissors.textContent = computerChoice;
+    paper.style.visibility = "hidden";
 }
 
 function playChallengeGame(playerChoice) {
     var computerChoice = challengeArray[Math.floor(Math.random() * challengeArray.length)];
     compareChallengeChoices(playerChoice, computerChoice);
-    rockButton.textContent = playerChoice;
-    scissorsButton.textContent = computerChoice;
-    lizardButton.style.visibility = "hidden";
-    paperButton.style.visibility = "hidden";
-    alienButton.style.visibility = "hidden";
+    rock.textContent = playerChoice;
+    scissors.textContent = computerChoice;
+    lizard.style.visibility = "hidden";
+    paper.style.visibility = "hidden";
+    alien.style.visibility = "hidden";
 }
 
 function compareChoices(playerChoice, computerChoice) {
@@ -130,9 +130,9 @@ function compareChoices(playerChoice, computerChoice) {
     updateWinCount();
     setTimeout(function() {
         subtitle.innerHTML = "Choose your fighter!";
-        rockButton.textContent = "🪨";
-        scissorsButton.textContent = "✂️";
-        paperButton.style.visibility = "visible";
+        rock.textContent = "🪨";
+        scissors.textContent = "✂️";
+        paper.style.visibility = "visible";
     }, 1000);
 }
 
@@ -160,11 +160,11 @@ function compareChallengeChoices(playerChoice, computerChoice) {
     updateWinCount();
     setTimeout(function() {
         subtitle.innerHTML = "Choose your fighter!";
-        rockButton.textContent = "🪨";
-        scissorsButton.textContent = "✂️";
-        paperButton.style.visibility = "visible";
-        lizardButton.style.visibility = "visible";
-        alienButton.style.visibility = "visible";
+        rock.textContent = "🪨";
+        scissors.textContent = "✂️";
+        paper.style.visibility = "visible";
+        lizard.style.visibility = "visible";
+        alien.style.visibility = "visible";
     }, 1000);
 }
 
