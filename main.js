@@ -133,7 +133,7 @@ function compareChoices(playerChoice, computerChoice) {
         rock.textContent = "🪨";
         scissors.textContent = "✂️";
         paper.style.visibility = "visible";
-    }, 1000);
+    }, 1250);
 }
 
 function compareChallengeChoices(playerChoice, computerChoice) {
@@ -165,7 +165,7 @@ function compareChallengeChoices(playerChoice, computerChoice) {
         paper.style.visibility = "visible";
         lizard.style.visibility = "visible";
         alien.style.visibility = "visible";
-    }, 1000);
+    }, 1250);
 }
 
 function rockChoice() {
