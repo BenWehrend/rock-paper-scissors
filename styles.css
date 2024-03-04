@@ -1,9 +1,9 @@
 :root {
-    --font-family: "Fjalla One", sans-serif;
+    --font-family: "Orbitron", sans-serif;
     --main-color: white;
-    --background-color: violet;
-    --player-computer-color: rgb(201, 79, 201);
-    --game-color: purple;
+    --background-color: #00BFFF;
+    --player-computer-color: #318CE7;
+    --game-color: #2a52be;
 }
 
 * {
@@ -82,11 +82,12 @@ body {
     background-color: var(--game-color);
     color: var(--main-color);
     font-family: var(--font-family);
-    font-size: 1.25vw;
+    font-size: 1vw;
     width: 33%;
     height: 60%;
     grid-area: bottom-body;
     margin: 20px;
+    border-radius: 15px;
 }
 
 .classic-game ul,
@@ -125,6 +126,7 @@ body {
     align-items: center;
     padding: 15px;
     font-size: 2vw;
+    border-radius: 15px;
 }
 
 .buttons-all {
