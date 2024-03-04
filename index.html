@@ -9,7 +9,7 @@
         <h1 class="title" style="visibility: visible;">Rock, Paper, Scissors</h1>
         <h2 class="subtitle" style="visibility: visible;">Choose your game!</h2>
       <div class="player">
-        <p>👨🏼‍🦳</p>
+        <p>👨‍🦳</p>
         <p class="player-name">Player</p>
         <p class="player-wins">Wins: 0</p>
         <button class="change-game" style="visibility: hidden;">Change game?</button>
@@ -19,31 +19,33 @@
         <p class="computer-name">Computer</p>
         <p class="computer-wins">Wins: 0</p>
       </div>
-      <button class="classic-game" style="visibility: visible;">
-        ✂️ CLASSIC 📄
-        <div>
-          <ul>rock > scissors</ul>
-          <ul>paper > rock</ul>
-          <ul>scissors > paper</ul>
+      <div class="game-selection">
+        <button class="classic-game" style="visibility: visible;">
+          ✂️ CLASSIC 📄
+          <div>
+            <ul>rock > scissors</ul>
+            <ul>paper > rock</ul>
+            <ul>scissors > paper</ul>
+          </div>
+        </button>
+        <div class="buttons-all">
+          <span class="emoji-button rock player-choice" style="visibility: hidden;">🪨</span>
+          <span class="emoji-button paper" style="visibility: hidden;">📄</span>
+          <span class="emoji-button scissors computer-choice" style="visibility: hidden;">✂️</span>
+          <span class="emoji-button alien" style="visibility: hidden;">👽</span>
+          <span class="emoji-button lizard" style="visibility: hidden;">🦎</span>
         </div>
-      </button>
-      <div class="buttons-all">
-        <button class="lizard" style="visibility: hidden;">🦎</button>
-        <button class="rock player-choice" style="visibility: hidden;">🪨</button>
-        <button class="paper" style="visibility: hidden;">📄</button>
-        <button class="scissors computer-choice" style="visibility: hidden;">✂️</button>
-        <button class="alien" style="visibility: hidden;">👽</button>
+        <button class="challenge-game" style="visibility: visible;">
+          🦎 CHALLENGE 👽
+          <div>
+            <ul>rock > scissors & lizard</ul>
+            <ul>paper > rock & alien</ul>
+            <ul>scissors > paper & lizard</ul>
+            <ul>lizard > paper & alien</ul>
+            <ul>alien > scissors & rock</ul>
+          </div>
+        </button>
       </div>
-      <button class="challenge-game" style="visibility: visible;">
-        🦎 CHALLENGE 👽
-        <div>
-          <ul>rock > scissors & lizard</ul>
-          <ul>paper > rock & alien</ul>
-          <ul>scissors > paper & lizard</ul>
-          <ul>lizard > paper & alien</ul>
-          <ul>alien > scissors & rock</ul>
-        </div>
-      </button>
     </div>
     <script src="main.js"></script>
   </body>
