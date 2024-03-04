@@ -92,7 +92,7 @@ function changeGame() {
     lizard.style.visibility = "hidden";
     alien.style.visibility = "hidden";
     changeGameButton.style.visibility = "hidden";
-    subtitle.innerHTML = "Choose your game!";
+    subtitle.innerHTML = "Select your game:";
     removeClassicEvents();
     removeChallengeEvents();
 }
@@ -129,7 +129,7 @@ function compareChoices(playerChoice, computerChoice) {
     }
     updateWinCount();
     setTimeout(function() {
-        subtitle.innerHTML = "Choose your fighter!";
+        subtitle.innerHTML = "Select your game:";
         rock.textContent = "🪨";
         scissors.textContent = "✂️";
         paper.style.visibility = "visible";
@@ -159,7 +159,7 @@ function compareChallengeChoices(playerChoice, computerChoice) {
     }
     updateWinCount();
     setTimeout(function() {
-        subtitle.innerHTML = "Choose your fighter!";
+        subtitle.innerHTML = "Select your game:";
         rock.textContent = "🪨";
         scissors.textContent = "✂️";
         paper.style.visibility = "visible";
