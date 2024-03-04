@@ -28,10 +28,12 @@ body {
       'left body right'
       'left bottom-body right'
       'left footer right';
+      grid-template-columns: .6fr 3fr .6fr;
     gap: 10px;
     background-color: var(--background-color);
     text-align: center;
     min-height: 100vh;
+    min-width: 15vw;
 }
 
 .title,
@@ -40,12 +42,12 @@ body {
 }
 
 .title {
-    margin: 5vh;
+    margin-top: 3%;
     font-size: 5vw;
 }
 
 .subtitle {
-    margin-top: 17vh;
+    margin-top: 13%;
     font-size: 2vw;
 }
 
@@ -80,9 +82,9 @@ body {
     background-color: var(--game-color);
     color: var(--main-color);
     font-family: var(--font-family);
-    font-size: 1.75vw;
+    font-size: 1.25vw;
     width: 33%;
-    height: 80%;
+    height: 60%;
     grid-area: bottom-body;
     margin: 20px;
 }
@@ -109,9 +111,10 @@ body {
     display: flex;
     justify-content: center;
     background-color: var(--background-color);
-    font-size: 100px;
-    height: 125px;
-    width: 125px;
+    font-size: 8rem;
+    height: 7vw;
+    width: 7vw;
+    margin: 2rem;
 }
 
 .change-game {
@@ -130,7 +133,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .rock:hover,
