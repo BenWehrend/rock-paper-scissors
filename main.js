@@ -12,7 +12,7 @@ var computerWinCount = document.querySelector('.computer-wins');
 var playerResult = document.querySelector('.player-choice');
 var computerResult = document.querySelector('.computer-choice');
 
-var player = createPlayer('Player', '👨🏼‍🦳');
+var player = createPlayer('Player', '⛷️');
 var computer = createPlayer('Computer', '💻');
 var playerWins = 0;
 var computerWins = 0;
@@ -121,7 +121,7 @@ function compareChoices(playerChoice, computerChoice) {
     } else if ((playerChoice === '🪨' && computerChoice === '✂️') ||
                (playerChoice === '📄' && computerChoice === '🪨') ||
                (playerChoice === '✂️' && computerChoice === '📄')) {
-        subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";;
+        subtitle.innerHTML = "⛷️ Congrats! You win! ⛷️";;
         playerWins++;
     } else {
         subtitle.innerHTML = "💻 Oh no! You lose! 💻";
@@ -151,7 +151,7 @@ function compareChallengeChoices(playerChoice, computerChoice) {
         (playerChoice === '📄' && computerChoice === '👽') ||
         (playerChoice === '👽' && computerChoice === '🪨')
     ) {
-        subtitle.innerHTML = "👨🏼‍🦳 Congrats! You win! 👨🏼‍🦳";
+        subtitle.innerHTML = "⛷️ Congrats! You win! ⛷️";
         playerWins++;
     } else {
         subtitle.innerHTML = "💻 Oh no! You lose! 💻";
