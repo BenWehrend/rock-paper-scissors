@@ -5,7 +5,7 @@ Using a combination of HTML, CSS, and Javascript I made an a browser page with t
 
 ### Installation Instructions: 
 I did use liveshare on VSCode select to run the page.
-- use git clone to clone repository
+- use git clone to clone down repository
 - 'cd' into project
 - 'open indenx.html'
 - 'Go live' on liveshare
