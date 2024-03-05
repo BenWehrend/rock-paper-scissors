@@ -5,10 +5,11 @@ Using a combination of HTML, CSS, and Javascript I made an a browser page with t
 
 ### Installation Instructions: 
 I did use liveshare on VSCode select to run the page.
-- use git clone to clone down repository
+
+- first use 'git clone git@github.com:BenWehrend/rock-paper-scissors.git' to clone down repository
 - 'cd' into project
 - 'open indenx.html'
-- 'Go live' on liveshare
+- 'Go live' on liveshare with VSCode select
 
 ### Preview of App:
 ![Screenshot 2024-03-04 at 1 10 24 PM](https://github.com/BenWehrend/rock-paper-scissors/assets/155917289/e0d1cecd-4761-466b-ac01-0f7c84f3fe24)
