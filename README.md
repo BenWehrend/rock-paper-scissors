@@ -15,7 +15,7 @@ I did use liveshare on VSCode select to run the page.
 
 
 ### Context:
-This was my final solo project for module 1 at Turing. We were given an entire week to complete this task.
+This was my final solo project for module 1 at Turing Module 1 included the first 6 weeks at Turing and it was assigned the fifth week. We were given an entire week to complete this task.
 
 ### Contributors
 https://github.com/BenWehrend
