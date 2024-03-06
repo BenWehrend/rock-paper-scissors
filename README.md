@@ -8,7 +8,7 @@ I did use liveshare on VSCode select to run the page.
 
 - first use 'git clone git@github.com:BenWehrend/rock-paper-scissors.git' to clone down repository
 - 'cd' into project
-- 'open indenx.html'
+- 'open index.html'
 - 'Go live' on liveshare with VSCode select
 
 ### Preview of App:
