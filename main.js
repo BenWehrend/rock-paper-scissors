@@ -9,24 +9,14 @@ var changeGameButton = document.querySelector('.change-game');
 var subtitle = document.querySelector('.subtitle');
 var playersWinCount = document.querySelector('.player-wins');
 var computerWinCount = document.querySelector('.computer-wins');
-var playerResult = document.querySelector('.player-choice');
-var computerResult = document.querySelector('.computer-choice');
 
-var player = createPlayer('Player', '⛷️');
-var computer = createPlayer('Computer', '💻');
 var playerWins = 0;
 var computerWins = 0;
 var currentGame;
+var timeoutNow;
 
 var classicArray = ['🪨', '📄', '✂️'];
 var challengeArray = ['🪨', '📄', '✂️', '🦎', '👽'];
-
-function createPlayer(name, token) {
-    return {
-        name,
-        token
-    }
-}
 
 function addClassicEvents() {
     rock.addEventListener('click', rockChoice);
@@ -51,10 +41,6 @@ function removeChallengeEvents() {
     lizard.removeEventListener('click', lizardChoice);
     alien.removeEventListener('click', alienChoice);
 }
-
-classicGameButton.addEventListener('click', startClassicGame);
-challengeGameButton.addEventListener('click', startChallengeGame);
-changeGameButton.addEventListener('click', changeGame);
 
 function startClassicGame() {
     currentGame = 'classic';
@@ -95,6 +81,7 @@ function changeGame() {
     subtitle.innerHTML = "Select your game:";
     removeClassicEvents();
     removeChallengeEvents();
+    clearTimeout(timeoutNow);
 }
 
 function playClassicGame(playerChoice) {
@@ -116,56 +103,70 @@ function playChallengeGame(playerChoice) {
 }
 
 function compareChoices(playerChoice, computerChoice) {
+    const winningClassicCombos = {
+        '🪨': ['✂️'],
+        '✂️': ['📄'],
+        '📄': ['🪨'],
+    };
+
     if (playerChoice === computerChoice) {
         subtitle.innerHTML = "❔ It's a tie! ❔";
-    } else if ((playerChoice === '🪨' && computerChoice === '✂️') ||
-               (playerChoice === '📄' && computerChoice === '🪨') ||
-               (playerChoice === '✂️' && computerChoice === '📄')) {
-        subtitle.innerHTML = "🍻 Score one for the home team 🍻";;
+    }   else if (winningClassicCombos[playerChoice].includes(computerChoice)) {
+        subtitle.innerHTML = "🍻 Score one for the home team 🍻";
         playerWins++;
-    } else {
-        subtitle.innerHTML = "❌ RNG says not this time ❌";
-        computerWins++;
-    }
+    }   
+
+
     updateWinCount();
-    setTimeout(function() {
-        subtitle.innerHTML = "Select your game:";
-        rock.textContent = "🪨";
-        scissors.textContent = "✂️";
-        paper.style.visibility = "visible";
+    timeoutNow = setTimeout(() => {
+        resetClassic();
     }, 1250);
 }
 
 function compareChallengeChoices(playerChoice, computerChoice) {
+    const winningChallengeCombos = {
+        '🪨': ['✂️', '🦎'],
+        '📄': ['🪨', '👽'],
+        '✂️': ['📄', '🦎'],
+        '🦎': ['📄', '👽'],
+        '👽': ['🪨', '✂️']
+    };
+
     if (playerChoice === computerChoice) {
         subtitle.innerHTML = "❔ It's a tie! ❔";
-    } else if (
-        (playerChoice === '🪨' && computerChoice === '✂️') ||
-        (playerChoice === '📄' && computerChoice === '🪨') ||
-        (playerChoice === '✂️' && computerChoice === '📄') ||
-        (playerChoice === '🪨' && computerChoice === '🦎') ||
-        (playerChoice === '🦎' && computerChoice === '👽') ||
-        (playerChoice === '👽' && computerChoice === '✂️') ||
-        (playerChoice === '✂️' && computerChoice === '🦎') ||
-        (playerChoice === '🦎' && computerChoice === '📄') ||
-        (playerChoice === '📄' && computerChoice === '👽') ||
-        (playerChoice === '👽' && computerChoice === '🪨')
-    ) {
+    } else if (winningChallengeCombos[playerChoice].includes(computerChoice)) {
         subtitle.innerHTML = "🍻 Score one for the home team 🍻";
         playerWins++;
     } else {
         subtitle.innerHTML = "❌ RNG says not this time ❌";
         computerWins++;
     }
+
     updateWinCount();
-    setTimeout(function() {
-        subtitle.innerHTML = "Select your game:";
-        rock.textContent = "🪨";
-        scissors.textContent = "✂️";
-        paper.style.visibility = "visible";
-        lizard.style.visibility = "visible";
-        alien.style.visibility = "visible";
+    timeoutNow = setTimeout(() => {
+        resetChallenge();
     }, 1250);
+}
+
+function resetClassic() {
+    subtitle.innerHTML = "Select your game:";
+    rock.textContent = "🪨";
+    scissors.textContent = "✂️";
+    paper.style.visibility = "visible";
+}
+
+function resetChallenge() {
+    subtitle.innerHTML = "Select your game:";
+    rock.textContent = "🪨";
+    scissors.textContent = "✂️";
+    paper.style.visibility = "visible";
+    lizard.style.visibility = "visible";
+    alien.style.visibility = "visible";
+}
+
+function updateWinCount() {
+    playersWinCount.textContent = `Wins: ${playerWins}`;
+    computerWinCount.textContent = `Wins: ${computerWins}`;
 }
 
 function rockChoice() {
@@ -200,7 +201,6 @@ function alienChoice() {
     playChallengeGame('👽');
 }
 
-function updateWinCount() {
-    playersWinCount.textContent = `Wins: ${playerWins}`;
-    computerWinCount.textContent = `Wins: ${computerWins}`;
-}
+classicGameButton.addEventListener('click', startClassicGame);
+challengeGameButton.addEventListener('click', startChallengeGame);
+changeGameButton.addEventListener('click', changeGame);
